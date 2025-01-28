@@ -1,3 +1,4 @@
+<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - My Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="../static/s.css">
+    <link rel="stylesheet" href="../static/contact.css">
 </head>
 
 <body>
@@ -21,22 +22,41 @@
         </nav>
     </header>
 
-    <section id="contact" class="section-padding">
+    <section id="contact" class="contact-section section-padding">
         <div class="container">
             <h2>Contact Me</h2>
-            <p>I'd love to hear from you! Whether you're interested in collaborating, need help with a project, or just want to chat, feel free to reach out.</p>
-            <p>Email me directly at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <p>Or find me on these platforms:</p>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-            </ul>
+            <p>Thank you for visiting my portfolio! I'm always open to new opportunities, collaborations, or even just a casual conversation. Feel free to reach out using any of the methods below.</p>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Get in Touch</h3>
+                <form action="/submit" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Alternative Contact</h3>
+                <p>If you prefer, you can email me directly or reach out on the following platforms:</p>
+                <p>Email: <a href="mailto:shahidthaha4@gmail.com">shahidthaha4@gmail.com</a></p>
+                <ul>
+                    <li><a href="https://github.com/shahidthaha05" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.instagram.com/sha_hidthaha" target="_blank">Instagram</a></li>
+                    <li><a href="https://wa.me/6282771585" target="_blank">WhatsApp</a></li>
+                </ul>
+            </div>
         </div>
     </section>
-
-    <footer>
-        <p>© 2025 John Doe. All Rights Reserved.</p>
-    </footer>
 </body>
 
 </html>
