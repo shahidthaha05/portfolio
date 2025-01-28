@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/s.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Project 1">
+                    <h3>Project 1: Task Manager</h3>
+                    <p>A web application that allows users to manage their daily tasks, set reminders, and track their progress.</p>
+                    <a href="https://github.com/yourusername/task-manager" target="_blank" class="cta-button">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Project 2">
+                    <h3>Project 2: Portfolio Website</h3>
+                    <p>This very website is built using Flask and deployed on Heroku. It serves as a personal portfolio showcasing my skills and projects.</p>
+                    <a href="https://github.com/yourusername/portfolio" target="_blank" class="cta-button">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Project 3">
+                    <h3>Project 3: Blog Platform</h3>
+                    <p>A blog platform where users can write posts, comment on others' articles, and share their thoughts.</p>
+                    <a href="https://github.com/yourusername/blog-platform" target="_blank" class="cta-button">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 John Doe. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
