@@ -1,14 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Shahid Thaha Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="../static/about.css">
-</head>
+    <title>About Me - Python Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
 
+        body {
+            background-color: #212121;
+            color: #e0e0e0;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        header nav ul li a:hover {
+            color: #ff9900;
+        }
+
+        /* Add padding to the body to avoid the content being hidden under the fixed header */
+        body {
+            padding-top: 70px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #00bcd4;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: #333;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile {
+            margin-bottom: 40px;
+        }
+
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #00bcd4;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile p {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            color: #b0bec5;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background: #424242;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill h3 {
+            font-size: 1.4rem;
+            color: #00bcd4;
+            margin-bottom: 15px;
+        }
+
+        .skill p {
+            font-size: 1.1rem;
+            color: #b0bec5;
+        }
+
+        .projects-container {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 30px;
+        }
+
+        .project {
+            background: #424242;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project h3 {
+            font-size: 1.6rem;
+            color: #00bcd4;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background-color: #00bcd4;
+            color: #212121;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: 70px;
+            padding: 20px;
+            background-color: #212121;
+            color: #b0bec5;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00bcd4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+    </style>
+</head>
 <body>
     <header>
         <nav>
@@ -21,36 +211,67 @@
         </nav>
     </header>
 
-    <section id="about" class="section-padding">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Who I Am</h3>
-                    <p>Hi there! I'm <strong>Shahid Thaha</strong>, a passionate and results-oriented <strong>Web Developer</strong>. With a strong foundation in both front-end and back-end development, I specialize in building user-friendly, responsive, and scalable web applications. I am dedicated to continuous learning and staying updated with the latest trends and technologies in the ever-evolving tech landscape.</p>
-
-                    <h3>My Skills</h3>
-                    <ul>
-                        <li><strong>Languages:</strong> HTML5, CSS3, JavaScript, Python</li>
-                        <li><strong>Frameworks & Libraries:</strong> React.js, Flask, Django, Bootstrap, jQuery</li>
-                        <li><strong>Tools & Technologies:</strong> Git, NPM, Webpack, Docker</li>
-                        <li><strong>Databases:</strong> MySQL, MongoDB, PostgreSQL</li>
-                    </ul>
-
-                    <h3>Education & Certifications</h3>
-                    <p>I hold a degree in <strong>Computer Science</strong> from <strong>Government Polytechnic College Muttom</strong>, where I gained solid knowledge in computer programming, algorithms, and web technologies. In addition to my formal education, I've completed a 7 month additional course in python full stack  in 24-25 in synnefo solution</p>
-
-                    <a href="/static/image/White Simple Student CV Resume (2).pdf (1).pdf" class="btn-resume" target="_blank">My Resume</a>
-                </div>
-
-                <div class="about-image">
-                    <img src="/static/image/Meme Messi.jpg" alt="Shahid Thaha Profile Picture">
-                </div>
-            </div>
+    <section class="container">
+        <h2>About Me</h2>
+        <div class="profile">
+            <img src="/static/image/Meme Messi.jpg" alt="Profile Picture">
+            <p>Hi! I'm <strong>Shahid Thaha</strong>, a passionate <strong>Web Developer</strong> with a strong background in both backend and frontend technologies. I enjoy building scalable and efficient systems while focusing on creating seamless user experiences.</p>
+            <p> I’ve honed my skills in a variety of programming languages and frameworks, with a special focus on Python and related technologies. I am always eager to learn and apply new technologies to solve real-world problems. i specialized in Python ,Flask and front-end technologies such as HTML,CSS AND JavaScript To Create the websites</p>
         </div>
     </section>
 
+    <section class="container skills-container">
+        <h2>Skills</h2>
+        <div class="skill">
+            <h3>Backend Development</h3>
+            <p>Proficient in Python-based frameworks like Django and Flask for building robust backend services and APIs. I specialize in designing scalable, secure, and maintainable systems.</p>
+        </div>
+        <div class="skill">
+            <h3>Frontend Development</h3>
+            <p>Skilled in modern frontend technologies like HTML5, CSS3, JavaScript, and React.js. I enjoy creating visually appealing and interactive user interfaces that enhance user experience.</p>
+        </div>
+        <!-- <div class="skill">
+            <h3>Data Management</h3>
+            <p>Experienced in managing relational and non-relational databases like PostgreSQL, MongoDB, and MySQL. Proficient in optimizing database queries and maintaining data integrity.</p>
+        </div>
+        <div class="skill">
+            <h3>Automation</h3>
+            <p>Expert in Python scripting for automating repetitive tasks, improving workflows, and optimizing time management for various tasks such as web scraping, data analysis, and system administration.</p>
+        </div>
+        <div class="skill">
+            <h3>Machine Learning</h3>
+            <p>Hands-on experience in machine learning with Python, utilizing libraries such as TensorFlow and scikit-learn to build models for predictive analysis, recommendation systems, and data-driven applications.</p>
+        </div> -->
+    </section>
+
+    <section class="container projects-container">
+        <h2>Personal Projects</h2>
+        <div class="project">
+            <h3>E-commerce Website</h3>
+            <p>An e-commerce website for a T-shirt brand allows customers to browse, select, and purchase T-shirts online.
+                
+            </p>
+        </div>
+        <div class="project">
+            <h3>APPLE WEBSITE</h3>
+            <p></p>
+        </div>
+        <div class="project">
+            <h3>Weather Prediction App</h3>
+            <p>Leveraging machine learning to predict weather conditions based on historical data. Built with scikit-learn for model development and Flask for web application deployment.</p>
+        </div>
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>This very website! Built with HTML, CSS, and JavaScript to showcase my work, skills, and contact information. It's a responsive and interactive site designed to represent my professional journey.</p>
+        </div>
+    </section>
+
+    <section class="container contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>Location:</strong> Kerala, India</p>
+        <p><strong>Email:</strong> shahidthaha4@gmail.com</p>
+        <p><strong>Mobile:</strong> 6282771585</p>
+    </section>
+
 </body>
-
 </html>
-

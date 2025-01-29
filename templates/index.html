@@ -6,9 +6,132 @@
     <title>Welcome to My Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="../static/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #212121;
+            color: #e0e0e0;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        header nav ul li a:hover {
+            color: #ff9900;
+        }
+
+        body {
+            padding-top: 70px;
+        }
+
+        .layout-wrapper {
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background: #333;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .intro:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .intro-text {
+            max-width: 50%;
+            color: #e0e0e0;
+        }
+
+        .intro-text h1 {
+            font-size: 2.5rem;
+            color: #00bcd4;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #b0bec5;
+        }
+
+        .btn-primary {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: #212121;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff9900;
+        }
+
+        .intro-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid #00bcd4;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .intro-image img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -19,20 +142,19 @@
         </nav>
     </header>
 
-    <section class="intro">
-        <div class="container">
+    <div class="layout-wrapper">
+        <section class="intro">
             <div class="intro-text">
-                <h1>Hi, I'm [Shahid Thaha]</h1>
-                <p>A passionate <strong>Web Developer</strong> focused on creating impactful websites and applications.</p>
-                <p>Welcome to my portfolio! Here you can find some of the projects I’ve worked on, along with my skills and contact information. Feel free to explore!</p>
+                <h1>Hi, I'm <span class="name-highlight">Shahid Thaha</span></h1>
+                <p class="intro-paragraph">A passionate <strong>Web Developer</strong> focused on creating impactful websites and applications.</p>
+                <p class="intro-paragraph">Welcome to my portfolio! Here you can find some of the projects I’ve worked on, along with my skills and contact information. Feel free to explore!</p>
                 <a href="/projects" class="btn-primary">View My Projects</a>
             </div>
             <div class="intro-image">
                 <img src="/static/image/Meme Messi.jpg" alt="Your Profile Picture">
             </div>
-        </div>
-    </section>
-
+        </section>
+    </div>
 
 </body>
 </html>
