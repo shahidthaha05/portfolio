@@ -1,142 +1,116 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
+    padding-top: 50px; /* To make space for the fixed header */
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #333;
-    padding: 15px 0;
+    color: #fff;
+    padding: 10px 0;
+    z-index: 1000;
 }
 
 header nav ul {
-    list-style-type: none;
+    list-style: none;
     text-align: center;
-    margin: 0;
-    padding: 0;
 }
 
 header nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 20px;
 }
 
 header nav ul li a {
-    color: white;
     text-decoration: none;
-    font-size: 18px;
-    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #ff9900;
+    color: #f39c12;
 }
 
 /* About Section */
-.section-padding {
-    padding: 60px 20px;
+#about {
+    background-color: #fff;
+    padding: 60px 20px; /* Add padding to make space for fixed header */
 }
 
 .container {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 h2 {
     text-align: center;
     font-size: 36px;
-    margin-bottom: 40px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .about-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 30px;
 }
 
 .about-text {
-    max-width: 60%;
+    flex: 0 0 60%;
 }
 
 .about-text h3 {
-    font-size: 24px;
+    font-size: 28px;
+    color: #333;
     margin-bottom: 15px;
-    color: #008CBA;
 }
 
 .about-text p {
     font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
     line-height: 1.6;
-    margin-bottom: 20px;
 }
 
-.about-text ul {
-    list-style-type: none;
-    padding-left: 0;
+ul {
+    list-style: none;
+    padding-left: 20px;
 }
 
-.about-text ul li {
+ul li {
     font-size: 18px;
     margin-bottom: 10px;
+    color: #555;
 }
 
-.about-image img {
-    max-width: 300px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+ul li strong {
+    color: #333;
 }
 
-.about-image img:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-text {
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .about-image img {
-        max-width: 200px;
-    }
-}
-/* Button Styles */
 .btn-resume {
     display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
+    background-color: #f39c12;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
@@ -144,9 +118,36 @@ footer p {
 }
 
 .btn-resume:hover {
-    background-color: #0056b3;
+    background-color: #e67e22;
 }
 
-.btn-resume:focus {
-    outline: none;
+/* About Image */
+.about-image {
+    flex: 0 0 35%;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: center;
+        flex: 0 0 100%;
+    }
+
+    .about-image {
+        flex: 0 0 100%;
+        margin-top: 20px;
+    }
 }
