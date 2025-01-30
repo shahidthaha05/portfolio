@@ -1,0 +1,61 @@
+/* General Responsive Enhancements */
+@media (max-width: 1024px) {
+    .container, .projects-container {
+        width: 90%;
+    }
+
+    .intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #444;
+        padding: 15px 0;
+    }
+
+    header nav ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .projects-container, .skills-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .btn-primary {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .project-card, .contact-form, .contact-info {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .container, .projects-container {
+        padding: 10px;
+    }
+}

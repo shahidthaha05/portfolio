@@ -29,6 +29,7 @@
             top: 0;
             left: 0;
             z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         header nav ul {
@@ -54,8 +55,9 @@
             color: #ff9900;
         }
 
+        /* Ensuring content is not hidden behind the fixed header */
         body {
-            padding-top: 70px;
+            padding-top: 80px;
         }
 
         .contact-section {
@@ -191,6 +193,139 @@
 
         .contact-info ul li a:hover {
             color: #ff5722;
+        }
+
+        /* Media Queries for max-width 1024px (Tablets and smaller devices) */
+        @media (max-width: 1024px) {
+            .container {
+                width: 90%;
+            }
+
+            .contact-section h2 {
+                font-size: 32px;
+            }
+
+            .contact-form h3 {
+                font-size: 26px;
+            }
+
+            .contact-form label {
+                font-size: 17px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 15px;
+                padding: 9px;
+            }
+
+            .btn-primary {
+                font-size: 15px;
+                padding: 11px 18px;
+            }
+
+            .contact-info h3 {
+                font-size: 26px;
+            }
+
+            .contact-info p {
+                font-size: 16px;
+            }
+
+            .contact-info ul li a {
+                font-size: 17px;
+            }
+
+            /* Adjust navigation for tablet screens */
+            header nav ul li {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            header nav ul li a {
+                font-size: 16px;
+            }
+        }
+
+        /* Media Queries for max-width 768px (Small Tablets and Phones) */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .contact-section h2 {
+                font-size: 30px;
+            }
+
+            .contact-form h3 {
+                font-size: 24px;
+            }
+
+            .contact-form label {
+                font-size: 16px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .btn-primary {
+                font-size: 14px;
+                padding: 10px 18px;
+            }
+
+            .contact-info h3 {
+                font-size: 24px;
+            }
+
+            .contact-info p {
+                font-size: 16px;
+            }
+
+            .contact-info ul li a {
+                font-size: 16px;
+            }
+        }
+
+        /* Media Queries for max-width 480px (Small Phones) */
+        @media (max-width: 480px) {
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-section h2 {
+                font-size: 24px;
+            }
+
+            .contact-form h3 {
+                font-size: 22px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .btn-primary {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+
+            .contact-info h3 {
+                font-size: 22px;
+            }
+
+            .contact-info p {
+                font-size: 14px;
+            }
+
+            .contact-info ul li a {
+                font-size: 14px;
+            }
         }
     </style>
 </head>

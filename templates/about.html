@@ -196,25 +196,85 @@
         footer a:hover {
             color: #fff;
         }
+
         .button {
-    display: inline-block;
-    background-color: #00bcd4;
-    color: #212121;
-    padding: 15px 30px;
-    margin-top: 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
+            display: inline-block;
+            background-color: #00bcd4;
+            color: #212121;
+            padding: 15px 30px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
 
-.button:hover {
-    background-color: #ff9900;
-    color: #fff;
-}
+        .button:hover {
+            background-color: #ff9900;
+            color: #fff;
+        }
 
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
 
+            .container {
+                padding: 30px;
+            }
+
+            .skills-container, .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .skill, .project {
+                padding: 20px;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .button {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .profile p {
+                font-size: 1rem;
+            }
+
+            .skills-container, .projects-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .skill, .project {
+                padding: 15px;
+            }
+
+            .contact-info p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -254,36 +314,29 @@
         <h2>Personal Projects</h2>
         <div class="project">
             <h3>E-commerce Website</h3>
-            <p>An e-commerce website for a T-shirt brand allows customers to browse, select, and purchase T-shirts online.
-                
-            </p>
+            <p>An e-commerce website for a T-shirt brand allows customers to browse, select, and purchase T-shirts online.</p>
         </div>
         <div class="project">
             <h3>Book My Show</h3>
             <p>This is a clone project of Book My Show website its a Responsive and intreactive site .</p>
         </div>
-        
-        
         <div class="project">
-            <h3>Chempakam Website </h3>
-            <p>It's alos a clone project of a real website kown Chembakam this is alos a Responsive and intreactive site.</p>
+            <h3>Chempakam Website</h3>
+            <p>It's also a clone project of a real website known as Chembakam. This is also a responsive and interactive site.</p>
         </div>
         <div class="project">
             <h3>Portfolio Website</h3>
-            <p>This very website! Built with HTML, CSS, and and flask to showcase my work, skills, and contact information. It's a responsive and interactive site designed to represent my professional journey.</p>
+            <p>This very website! Built with HTML, CSS, and Flask to showcase my work, skills, and contact information. It's a responsive and interactive site designed to represent my professional journey.</p>
         </div>
     </section>
-
 
     <a href="/static/image/White Simple Student CV Resume (2).pdf (1).pdf" class="button" target="_blank">Download Resume</a>
 
     <section class="container contact-info">
         <h2>Contact Information</h2>
         <p><strong>Location:</strong> Kerala, India</p>
-        <p><strong>Email:</strong>  shahidthaha4@gmail.com</p>
+        <p><strong>Email:</strong> shahidthaha4@gmail.com</p>
         <p><strong>Mobile:</strong> 6282771585</p>
     </section>
-
-
 </body>
 </html>

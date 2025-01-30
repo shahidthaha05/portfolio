@@ -79,7 +79,7 @@
         }
 
         .projects-container {
-            width: 85%;
+            width: 90%;
             max-width: 1300px;
             margin: 50px auto;
             background: #333;
@@ -95,10 +95,10 @@
         }
 
         .project-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Grid layout for responsiveness */
             gap: 30px;
+            justify-items: center;
         }
 
         .project-card {
@@ -106,7 +106,8 @@
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            width: 320px;
+            width: 100%;
+            max-width: 320px;
             transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
             text-align: left;
             animation: zoomIn 0.6s ease-out;
@@ -159,6 +160,49 @@
             background: #ff5722;
             transform: scale(1.1);
         }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .header-container h1 {
+                font-size: 28px;
+            }
+
+            .projects-container {
+                padding: 20px;
+            }
+
+            .project-card {
+                max-width: 90%;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header nav ul li a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container h1 {
+                font-size: 24px;
+            }
+
+            .project-title {
+                font-size: 20px;
+            }
+
+            .project-description {
+                font-size: 14px;
+            }
+
+            .view-project {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,7 +235,7 @@
                 <img src="/static/image/IMG-20250129-WA0029.jpg" alt="Project 2" class="project-thumbnail">
                 <div class="project-content">
                     <h2 class="project-title">Project 2</h2>
-                    <p class="project-description">A html clone website</p>
+                    <p class="project-description">A HTML clone website</p>
                     <a href="https://shahidthaha05.github.io/clothes/" class="view-project">View Project</a>
                 </div>
             </div>
@@ -199,8 +243,6 @@
     </div>
 </body>
 </html>
-
-
 
 
 
