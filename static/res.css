@@ -1,4 +1,10 @@
 /* General Responsive Enhancements */
+@media (max-width: 1200px) {
+    .container, .projects-container {
+        width: 85%;
+    }
+}
+
 @media (max-width: 1024px) {
     .container, .projects-container {
         width: 90%;
@@ -9,6 +15,10 @@
         align-items: center;
         text-align: center;
         padding: 20px;
+    }
+
+    .intro-text {
+        max-width: 100%;
     }
 }
 
@@ -37,6 +47,10 @@
         grid-template-columns: 1fr;
         padding: 10px;
     }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -57,5 +71,15 @@
 
     .container, .projects-container {
         padding: 10px;
+    }
+
+    .intro-image img {
+        width: 140px;
+        height: 140px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
     }
 }

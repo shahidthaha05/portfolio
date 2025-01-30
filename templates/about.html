@@ -13,16 +13,17 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        /* Ensure body starts after navbar */
         body {
             background-color: #212121;
             color: #e0e0e0;
             font-size: 16px;
             line-height: 1.6;
-            padding: 0;
-            margin: 0;
             text-align: center;
+            padding-top: 80px; /* Ensure content is visible below navbar */
         }
 
+        /* Navbar Styling */
         header {
             background-color: #333;
             padding: 15px 0;
@@ -30,19 +31,20 @@
             width: 100%;
             top: 0;
             left: 0;
-            z-index: 100;
+            z-index: 1000; /* Higher value to keep it above content */
         }
-
         header nav ul {
             list-style-type: none;
             text-align: center;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows items to stack */
         }
 
         header nav ul li {
-            display: inline;
-            margin: 0 20px;
+            margin: 0 15px;
         }
 
         header nav ul li a {
@@ -56,35 +58,21 @@
             color: #ff9900;
         }
 
-        /* Add padding to the body to avoid the content being hidden under the fixed header */
-        body {
-            padding-top: 70px;
+        /* Main Content Containers */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #333;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin-top: 100px;
         }
 
         h2 {
             font-size: 2.2rem;
             margin-bottom: 20px;
             color: #00bcd4;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 50px auto;
-            background: #333;
-            border-radius: 15px;
-            padding: 50px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
-        }
-
-        .profile {
-            margin-bottom: 40px;
         }
 
         .profile img {
@@ -93,7 +81,6 @@
             border-radius: 50%;
             border: 5px solid #00bcd4;
             object-fit: cover;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
@@ -101,67 +88,18 @@
             transform: scale(1.05);
         }
 
-        .profile p {
-            font-size: 1.1rem;
-            margin-top: 20px;
-            color: #b0bec5;
-        }
-
-        .skills-container {
+        .skills-container, .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
 
-        .skill {
+        .skill, .project {
             background: #424242;
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .skill:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .skill h3 {
-            font-size: 1.4rem;
-            color: #00bcd4;
-            margin-bottom: 15px;
-        }
-
-        .skill p {
-            font-size: 1.1rem;
-            color: #b0bec5;
-        }
-
-        .projects-container {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 30px;
-        }
-
-        .project {
-            background: #424242;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .project h3 {
-            font-size: 1.6rem;
-            color: #00bcd4;
-            margin-bottom: 10px;
         }
 
         .contact-info {
@@ -170,31 +108,6 @@
             border-radius: 12px;
             padding: 30px;
             margin-top: 50px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            margin-top: 70px;
-            padding: 20px;
-            background-color: #212121;
-            color: #b0bec5;
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        footer a {
-            color: #00bcd4;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #fff;
         }
 
         .button {
@@ -206,8 +119,6 @@
             border-radius: 8px;
             text-decoration: none;
             font-size: 1.2rem;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
         }
 
         .button:hover {
@@ -215,10 +126,18 @@
             color: #fff;
         }
 
-        /* Media Queries for Responsiveness */
+        /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                padding-top: 100px; /* Extra space for mobile navbar */
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
             header nav ul li {
-                display: block;
                 margin: 10px 0;
             }
 
@@ -238,13 +157,13 @@
             .skill, .project {
                 padding: 20px;
             }
-
-            footer {
-                font-size: 0.9rem;
-            }
         }
 
         @media (max-width: 480px) {
+            body {
+                padding-top: 110px; /* More padding for very small screens */
+            }
+
             h2 {
                 font-size: 1.8rem;
             }
@@ -258,17 +177,13 @@
                 padding: 20px;
             }
 
-            .profile p {
-                font-size: 1rem;
+            .profile img {
+                width: 130px;
+                height: 130px;
             }
 
             .skills-container, .projects-container {
                 grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .skill, .project {
-                padding: 15px;
             }
 
             .contact-info p {
@@ -293,7 +208,7 @@
         <h2>About Me</h2>
         <div class="profile">
             <img src="/static/image/Screenshot_2024-07-30-20-15-20-80_6012fa4d4ddec268fc5c7112cbb265e7.jpg" alt="Profile Picture">
-            <p>Hi! I'm <strong>Shahid Thaha</strong>, a passionate <strong>Web Developer</strong> with a strong background in both backend and frontend technologies. I enjoy building scalable and efficient systems while focusing on creating seamless user experiences.</p>
+            <p>Hi! I'm <strong>Shahid Thaha</strong>, a passionate <strong>Web Developer</strong> with a strong background in backend and frontend technologies. I enjoy building scalable and efficient systems while focusing on creating seamless user experiences</p>
             <p> I’ve honed my skills in a variety of programming languages and frameworks, with a special focus on Python and related technologies. I am always eager to learn and apply new technologies to solve real-world problems. i specialized in Python ,Flask and front-end technologies such as HTML,CSS AND JavaScript To Create the websites</p>
         </div>
     </section>
@@ -302,11 +217,11 @@
         <h2>Skills</h2>
         <div class="skill">
             <h3>Backend Development</h3>
-            <p>Proficient in Python-based frameworks like Django and Flask for building robust backend services and APIs. I specialize in designing scalable, secure, and maintainable systems.</p>
+            <p>Proficient in Python-based frameworks like Django and Flask for building robust backend services.</p>
         </div>
         <div class="skill">
             <h3>Frontend Development</h3>
-            <p>Skilled in modern frontend technologies like HTML5, CSS3, JavaScript, and React.js. I enjoy creating visually appealing and interactive user interfaces that enhance user experience.</p>
+            <p>Skilled in modern frontend technologies like HTML5, CSS3, JavaScript, and React.js.</p>
         </div>
     </section>
 
@@ -314,19 +229,19 @@
         <h2>Personal Projects</h2>
         <div class="project">
             <h3>E-commerce Website</h3>
-            <p>An e-commerce website for a T-shirt brand allows customers to browse, select, and purchase T-shirts online.</p>
+            <p>An online platform for browsing and purchasing T-shirts.</p>
         </div>
         <div class="project">
-            <h3>Book My Show</h3>
-            <p>This is a clone project of Book My Show website its a Responsive and intreactive site .</p>
+            <h3>Book My Show Clone</h3>
+            <p>A responsive and intreactive movie booking website.</p>
         </div>
         <div class="project">
-            <h3>Chempakam Website</h3>
-            <p>It's also a clone project of a real website known as Chembakam. This is also a responsive and interactive site.</p>
+            <h3>Chempakam Website </h3>
+            <p>It's also a clone project of a real website kown Chembakam this is alss a Responsive and intreactive site.</p>
         </div>
         <div class="project">
             <h3>Portfolio Website</h3>
-            <p>This very website! Built with HTML, CSS, and Flask to showcase my work, skills, and contact information. It's a responsive and interactive site designed to represent my professional journey.</p>
+            <p>This very website! Built with HTML, CSS, and JavaScript to showcase my work, skills, and contact information. It's a responsive and interactive site designed to represent my professional journey.</p>
         </div>
     </section>
 
